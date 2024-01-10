@@ -19,21 +19,22 @@ def get_genai_embeddings():
         config.load_api_key()
     except Exception as e:
         raise RuntimeError("Failed to load API key: {}".format(e))
+    
     embeddings = GoogleGenerativeAIEmbeddings(model=constant.GOOGLE_EMBEDDINGS_MODEL)
     return embeddings
 
-def create_and_save_vector_store(text_chunks,save_data_path):
+def create_and_save_vector_store(text_chunks,vector_store_path):
     """
     Create a vector store using embeddings generated from text chunks and save it locally.
 
     Args:
         text_chunks (list): A list of text chunks to generate embeddings and create the vector store.
 
-        save_data_path (str): Path to save the vector store store
+        vector_store_path (str): Path to save the vector store store
 
     Returns:
         None
     """
     embeddings = get_genai_embeddings()
     vector_store = faiss.FAISS.from_texts(text_chunks, embedding=embeddings)
-    vector_store.save_local(save_data_path)
+    vector_store.save_local(vector_store_path)
