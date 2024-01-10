@@ -2,7 +2,7 @@ from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from constants import constant
 
-def get_pdf_text(pdf_docs):
+def extract_text_from_pdfs(pdf_docs):
     """
     Extracts text from multiple PDF documents and concatenates it into a single string.
 
@@ -19,7 +19,7 @@ def get_pdf_text(pdf_docs):
             text += page.extract_text()
     return text
 
-def get_text_chunks(text):
+def split_text_into_chunks(text):
     """Splits a text into overlapping chunks using a recursive character-based approach.
 
     Args:
