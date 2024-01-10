@@ -138,3 +138,4 @@ If you'd like to contribute code to this project, follow these simple steps:
    - Provide a clear title and description for your PR.
 
 I'll review your contributions and work with you to integrate them into the project.
+
