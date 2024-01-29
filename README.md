@@ -51,7 +51,7 @@ The project is organized into several directories:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/multi-language-pdf-chatbot.git
+   git clone https://github.com/Deepak-porwal04/multi-language-pdf-chatbot.git
    cd multi-language-pdf-chatbot
 
 2. **Create a virtual environment:**
